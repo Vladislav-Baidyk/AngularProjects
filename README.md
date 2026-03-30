@@ -22,11 +22,7 @@ A high-performance, sleek social links profile card built with **Angular 18**. T
 * **Google Fonts** (Integrated 'Inter' font for premium typography)
 * **HTML5 & CSS3** (Semantic layout and custom CSS variables)
 
----
 
-## 📦 Live Demo
-
-Check out the live project here: [https://vladislav-baidyk.github.io/AngularProjects/task-02/browser/](https://vladislav-baidyk.github.io/AngularProjects/task-02/browser/)
 
 ---
 
