@@ -1,0 +1,7 @@
+@import "tailwindcss";
+.right-part{
+    font-family: "Kumbh Sans", sans-serif;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}

@@ -1,0 +1,19 @@
+@import "tailwindcss";
+.left-part-header{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.right-part-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+}
+@media screen and (max-width:870px) {
+    .left-part-header{
+    display: none;
+}
+}

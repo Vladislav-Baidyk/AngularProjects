@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@media screen and (max-width:870px) {
+    .mobile-style{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        
+    }
+}

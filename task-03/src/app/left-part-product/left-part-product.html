@@ -1,0 +1,22 @@
+<div class="shoe-wrapper">
+    <div class="shoe-desktop">
+            <img class="current-shoe" [src]="shoesBig[currentShoe()].url" alt="shoe image">
+    <div class="flex gap-4">
+            @for (shoe of shoesBig; track shoe.id){
+                <div class="shoe-image-wrapper" [class.active] = "shoe.id === currentShoe()">
+                     <img (click) = "changeShoeBig(shoe.id)" class="shoe-image"  [src]="shoe.url" alt="photo">
+                </div>
+        }
+    </div>
+    </div>
+        <div class="shoe-mobile">
+            <img class="current-shoe" [src]="shoesBig[currentShoe()].url" alt="shoe image">
+    <div class="flex gap-4">
+            @for (shoe of shoesSmallArr; track shoe.id){
+                <div class="shoe-image-wrapper" [class.active] = "shoe.id === currentShoe()">
+                     <img (click) = "changeShoeBig(shoe.id)" class="shoe-image"  [src]="shoe.url" alt="photo">
+                </div>
+        }
+    </div>
+    </div>
+</div>

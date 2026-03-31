@@ -1,0 +1,8 @@
+{
+    "shoesSmall" : [
+        {"id":0,"url" : "/images/image-product-1-thumbnail.jpg"},
+        {"id":1,"url" : "/images/image-product-2-thumbnail.jpg"},
+        {"id":2,"url" : "/images/image-product-3-thumbnail.jpg"},
+        {"id":3,"url" : "/images/image-product-4-thumbnail.jpg"}
+    ]
+}

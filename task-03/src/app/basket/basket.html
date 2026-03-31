@@ -1,0 +1,17 @@
+<div class="w-70 z-200">
+    <div class="p-3 font-bold ">Cart</div>
+    <hr/>
+    <div class="p-4 flex gap-4 justify-start items-start">
+    @if (cart.count() > 0){
+        @let item = cart.items()[0];
+        <div class="w-26 h-26 mt-2"><img src="/images/image-product-1-thumbnail.jpg" alt="product"></div>
+        <div>
+            <div class="text-gray-500 font-medium">Fall Limited Edition Sneaker's</div>
+            <div class="text-s flex gap-2"><div class="text-gray-500 font-bold">$125.00* {{item.quantity}}</div> <div class="font-black">{{item.price}}</div></div>
+        </div>
+        <div (click) = "cart.clearCart()" class="w-8 h-8 mt-8"><img src="/images/icon-delete.svg" alt="delete"></div>
+     } @else {
+        <div class="text-gray-500 py-10 text-center">Your cart is empty.</div>
+    }
+    </div>
+</div>
