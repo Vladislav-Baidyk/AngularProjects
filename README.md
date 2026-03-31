@@ -1,4 +1,4 @@
-![2026-03-31160111-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/49e6f323-d6cf-4b38-8344-5eb141dd10d1)E-commerce Product Page — Modern Angular & Signals Challenge
+E-commerce Product Page — Modern Angular & Signals Challenge
 A high-performance, interactive product page built with Angular 18. This project demonstrates advanced frontend practices, focusing on complex reactive state management, service-driven data flow, and a seamless user experience.
 
 ✨ Features
