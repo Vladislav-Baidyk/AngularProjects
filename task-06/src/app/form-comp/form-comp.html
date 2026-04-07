@@ -1,0 +1,107 @@
+<div class="w-full flex justify-center items-center bg-white rounded-lg">
+    <form (ngSubmit)="onSubmit()" [formGroup] = 'loginForm' class="w-auto flex justify-start items-start flex-col p-[3rem] gap-[1.5rem]">
+        <label >Contact Us</label>
+        <!--first row for input-->
+        <div class="flex gap-[1rem]">
+        <!--name-->
+        <div class="flex flex-col gap-[1rem] relative">
+            <label>First Name *</label>
+            <input class="border border-grey-500 rounded-sm lg:w-[15rem] lg:h-[2rem]" type="text" formControlName="name">
+            <div class="absolute top-[100%] left-0 text-red-500" *ngIf = "loginForm.get('name')?.invalid && loginForm.get('name')?.touched ">
+                    The field is required
+            </div>
+    
+        </div>
+        <!--surname-->
+        <div class="flex flex-col gap-[1rem] relative">
+            <label>Last Name *</label>
+            <input class="border border-grey-500 rounded-sm lg:w-[15rem] lg:h-[2rem]" type="text" formControlName="surname">
+            <div class="absolute top-[100%] left-0 text-red-500" *ngIf = "loginForm.get('surname')?.invalid && loginForm.get('surname')?.touched ">
+                    The field is required
+            </div>
+        </div>
+        </div>  
+        <!--email-->
+        <div class="flex flex-col gap-[1rem] relative" >
+            <label>Email Address *</label>
+            <div >
+                <input type="email" class="border border-grey-500 rounded-sm lg:w-[31rem] lg:h-[2rem]" formControlName = 'email'>
+                <div class="absolute top-[100%] left-0 text-red-500" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"  >
+                    Please enter valid email address
+                </div>
+            </div>
+        </div>
+        <!-- query  -->
+        <div class="w-full flex flex-col gap-4">
+        <label >Query Type *</label>
+        
+        <div class="w-full relative flex gap-4 pb-8"> 
+            
+            <div class="flex gap-4 border rounded-lg border-gray-900 items-center w-1/2 p-2 cursor-pointer transition-all"
+                [ngClass]="enquiryStyles" (click)="enqClick()">
+            
+            <div class="flex items-center justify-center w-5 h-5">
+                @if(loginForm.get('enquiry')?.value) {
+                <img src="./assets/images/icon-radio-selected.svg" alt="active">
+                } @else {
+                <div class="border w-4 h-4 border-black rounded-lg"></div>
+                }
+                <input type="checkbox" formControlName="enquiry" class="hidden"> 
+            </div>
+            
+            <div>General Enquiry</div>
+            </div>
+
+            <div class="flex gap-4 border rounded-lg border-gray-900 items-center w-1/2 p-2 cursor-pointer transition-all"
+                [ngClass]="requestStyles" (click)="reqClick()">
+            
+            <div class="flex items-center justify-center w-5 h-5">
+                @if(loginForm.get('request')?.value) {
+                <img src="./assets/images/icon-radio-selected.svg" alt="active">
+                } @else {
+                <div class="border w-4 h-4 border-black rounded-lg"></div>
+                }
+                <input type="checkbox" formControlName="request" class="hidden"> 
+            </div>
+            
+            <div>Support Request</div>
+            </div>
+
+            @if(loginForm.hasError('noChoice') && loginForm.touched) {
+            <div class="absolute left-0 bottom-0 text-red-500 text-sm">
+                Please select a query type
+            </div>
+            }
+        </div>
+        </div>
+        <!-- message -->
+         <div class="w-full flex flex-col gap-4">
+            <label>Message *</label>
+            <div><textarea class="resize-y w-full h-24 border border-gray-500 p-2 rounded-sm outline-none" 
+            formControlName="message"></textarea></div>
+            <div *ngIf="loginForm.get('message')?.invalid && loginForm.get('message')?.touched" class="text-red-500">Please describe the problem</div>
+         </div>
+         <!-- consent -->
+        <div class="flex flex-col gap-2">
+        <div class="flex gap-4 items-center">
+            <div class="cursor-pointer flex items-center justify-center w-5 h-5" (click)="consentClick()">
+            @if(loginForm.get('consent')?.value) {
+                <img src="./assets/images/icon-checkbox-check.svg" alt="check">
+            } @else {
+                <div class="border border-gray-500 h-5 w-5 rounded-sm"></div>
+            }
+            </div>
+            <div class="text-gray=-900">I consent to being contacted by team *</div>
+        </div>
+
+        <div class="text-red-500 text-sm" 
+            *ngIf="loginForm.get('consent')?.invalid && loginForm.get('consent')?.touched">
+            To submit this form, please consent to being contacted
+        </div>
+        </div>
+        <!-- button -->
+        <button type="submit" class="w-full bg-green-600/70 text-white py-4 rounded-lg font-bold hover:bg-green-700 transition-colors">
+        Submit
+        </button>
+    </form>
+</div>
