@@ -30,12 +30,6 @@ Check out the live project here: [https://vladislav-baidyk.github.io/AngularProj
 
 ---
 
-## 🎥 Preview
-![2026-03-30134644-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9ed03971-d9c5-4b9f-b5de-cca90bb441f8)
-
-
-
----
 
 ## 📁 How to Run Locally
 
