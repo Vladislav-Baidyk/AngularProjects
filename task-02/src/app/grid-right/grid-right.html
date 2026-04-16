@@ -1,0 +1,71 @@
+<div class="w-full flex flex-col ">
+  <!-- header -->
+  <app-header></app-header>
+
+  <!-- grid -->
+   <div class="box-content p-4">
+
+    <!-- grid-title -->
+     <div>
+      <div class="text-[14px] text-gray-700 font-bold opacity-69">MANAGEMENT LAYER</div>
+      <div class="text-5xl text-sky-900 font-black opacity-69">User Direcory</div>
+     </div>
+
+
+     <!-- grid with users -->
+      <div class="mt-10 flex flex-wrap gap-20">
+  @if(filteredUsers().length > 0){
+    @for(user of filteredUsers();track $index){
+
+      <div
+       class="w-45 h-45 rounded-xl flex flex-col bg-gray-200 box-content p-4"
+       (click) = "onClickUser(user)">
+
+        <!-- header-user -->
+         <div class="flex items-center justify-between">
+           <img class="h-10" src="./user/profile.png" alt="user image">
+           <div>
+            <div class="text-xs text-sky-900">Name:{{user.name}}</div>
+            <div class="text-xs opacity-69">Username:{{user.username}}</div>
+           </div>
+         </div>
+
+         <!-- info user -->
+         <div class="flex flex-col gap-4 mt-6">
+          <!-- mail -->
+          <div class="flex items-center gap-4">
+            <img class="h-4" src="./user/mail.png" alt="mail">
+            <div class="text-[12px]">{{user.email}}</div>
+          </div>
+          <!-- phone -->
+            <div class="flex items-center gap-4">
+            <img class="h-4" src="./user/phone-call.png" alt="phone">
+            <div class="text-[12px]">{{user.phone}}</div>
+          </div>
+          <!-- location -->
+              <div class="flex items-center gap-4">
+            <img class="h-4" src="./user/pin.png" alt="pin">
+            <div class="text-[12px]">{{user.address.street}}</div>
+          </div>
+         </div>
+      </div>
+         
+    }
+
+  }
+  @else{
+    <div>Loading</div>
+  }
+      </div>
+
+      <!-- buttons next previous -->
+       <div class="flex gap-20 mt-10">
+        <button
+          class="w-30 p-4 bg-sky-600 opacity-69 text-white rounded-xl"
+         (click)="backClick()">Previous</button>
+        <button
+          class=" w-30 p-4 bg-sky-600 opacity-69 text-white rounded-xl"
+         (click)="nextClick()">Next</button>
+       </div>
+   </div>
+</div>

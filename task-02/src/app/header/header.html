@@ -1,0 +1,27 @@
+<div class="w-full h-16 shadow-lg flex items-center justify-between p-4 bg-white relative">
+    @if(menu()){
+    <app-header-mobile 
+      (close)="menuToggle()" 
+      class="fixed inset-0 w-screen h-screen bg-white z-[9999]">
+    </app-header-mobile>
+  }
+  <img
+    class="w-8 cursor-pointer md:hidden" 
+    (click)="menuToggle()" 
+    src="./header/app.png" 
+    alt="menu">
+
+  <input 
+    class="p-2 rounded-md outline-none w-full max-w-[200px] md:max-w-md border border-gray-300 mx-4" 
+    type="text"
+    (input)="onInputService($event)"
+    placeholder="Search...">
+
+  <div class="flex gap-4 items-center">
+    <img class="h-6 md:h-8" src="./header/bell.png" alt="ring">
+    <img class="h-6 md:h-8" src="./header/question.png" alt="question">
+    <div class="hidden lg:block text-base font-semibold opacity-60">ADMIN PANEL</div>
+  </div>
+
+
+</div>

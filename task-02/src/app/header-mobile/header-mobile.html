@@ -1,0 +1,33 @@
+<div class="w-full h-screen p-6 flex flex-col relative bg-gray-50">
+    
+    <button 
+        (click)="closeMenu()" 
+        class="absolute top-6 right-6 text-3xl font-light text-gray-500 hover:text-black">
+        ✕
+    </button>
+
+    <div class="mb-10">
+        <div class="text-black font-black text-2xl">The Sovereign</div>
+        <div class="text-gray-400 font-black text-xs tracking-widest">DIRECTORY ADMIN</div>
+    </div>
+    
+    <nav class="flex-1"> 
+        <ul class="space-y-4">
+            @for(nav of navigation(); track nav.id){
+                <div 
+                    (click)="onSelectedIndex(nav.id)"
+                    class="w-full p-4 rounded-xl flex gap-6 items-center border border-transparent transition-all" 
+                    [class.bg-white]="nav.id === selectedIndex()"
+                    [class.shadow-md]="nav.id === selectedIndex()">
+                    
+                    <img class="h-8" [src]="nav.img" alt="pic">
+                    <li class="font-medium text-lg">{{nav.title}}</li>
+                </div>
+            }
+        </ul>
+    </nav>
+
+    <div class="mt-auto border-t pt-6">
+        <app-current-user />
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+    "naviagtion":[
+    {
+        "id":0,
+        "title":"Dashboard",
+        "img":"./navigation/dashboard.png"
+    },
+    {
+        "id":1,
+        "title":"Directory",
+        "img":"./navigation/directory.png"
+    },
+    {
+        "id":2,
+        "title":"Organizations",
+        "img":"./navigation/organization-chart.png"
+    },
+    {
+        "id":3,
+        "title":"Analytics",
+        "img":"./navigation/analitics.png"
+    },
+    {
+        "id":4,
+        "title":"Settings",
+        "img":"./navigation/settings.png"
+    }
+    ]
+}

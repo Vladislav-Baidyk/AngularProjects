@@ -1,0 +1,23 @@
+.left-wrapper{
+    background: #E2E2E2;
+    box-sizing: content-box;
+    padding: 2rem;
+}
+.header-left-title{
+    color: #000000;
+}
+.active{
+    opacity: 100%;
+    position: relative;
+    color: #001C3A;
+    font-weight: 600;
+}
+.active::before{
+    content: " ";
+    position: absolute;
+    left: -5%;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #001C3A;
+}

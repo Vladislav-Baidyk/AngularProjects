@@ -1,0 +1,17 @@
+<div class="flex items-center justify-start w-full h-full mt-20">
+    <div class="flex items-center justify-start gap-4 ">
+        <img class="w-[3rem]" src="./user/profile.png" alt="profile">
+
+    <!-- user info -->
+     @if(currentUserService.currentUser();as user){
+             <div>
+        <div class="font-black">{{user.name}}</div>
+        <div class="opacity-69">{{user.username}}</div>
+     </div>
+     }
+     @else{
+        <div>Loading</div>
+     }
+    </div>
+
+</div>

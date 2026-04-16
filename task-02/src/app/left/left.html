@@ -1,0 +1,29 @@
+<div class="w-full h-screen left-wrapper flex flex-col">
+    <!--header left-->
+    <div>
+        <!--header title-->
+        <div class="text-black font-black text-lg">The Sovereign</div>
+        <div class="text-gray-400 font-black text-xs">DIRECTORY ADMIN</div>
+    </div>
+    
+    <!--content-->
+    <div class="mt-16"> 
+        <nav>
+            <ul>
+                @for(nav of navigation(); track nav.id){
+                    <div 
+                    (click)="onSelectedIndex(nav.id)"
+                    class="w-full h-[4rem] flex gap-4 items-center justify-start opacity-69" 
+                     [class.active]="nav.id === selectedIndex()">
+                    <img class="h-[2rem]" src={{nav.img}} alt="pic">
+                    <li>{{nav.title}}</li>
+                    </div>
+                }
+            </ul>
+        </nav>
+    </div>
+
+
+    
+        <app-current-user/>
+</div>
